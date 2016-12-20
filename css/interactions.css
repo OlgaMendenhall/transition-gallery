@@ -1,0 +1,47 @@
+/* ================================= 
+  Photo Overlay Transition
+==================================== */
+
+.photo-overlay {
+	opacity: 0;             /* the opacity is zero, so can't see our overlay layer*/
+	transition: opacity .5s;    /* for shorthand we're writing  here opacity and the .5 second duration in the value*/
+}
+.photo-overlay:hover {
+	opacity: 1;            /* the opacity is 1, so our overlay layer appears and we can see it*/
+}
+
+/* ================================= 
+  Button Transitions
+==================================== */
+
+.button {             
+  opacity: 0;           /* the opacity is zero, so can't see our button. the button is nested inside photo-overlay */
+  transition: opacity .3s .2s, background .4s .3s, box-shadow .5s 0s;    /* The first time value listed is the transition-duration and the second time value -the transition-delay.*/
+  transition-timing-function: ease-out;
+}
+
+.button:hover {
+  background: rgba(74, 137, 202, 1); /* This sets the alpha value in the button's background to one on hover so that it's not transparent */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .7); /* this adds a white transparent box shadow around the button that looks like a border! */
+}
+
+.photo-overlay:hover .button {
+    opacity: 1;          /* this rule targets the button when a user hovers over photo-overlay */
+}
+
+.btn-icon {
+  transition-property: opacity, left;  /* we use transition-property to transition the opacity property and the left offset смещение of the button icon */
+  transition-duration: .5s;   /* transition-duration for both properties = 0.5 seconds */
+  transition-delay: .3s;      /* transition-delay  for both properties = 0.3 seconds */
+  transition-timing-function: ease-out;    /* we added a timing-function to liven it up чтобы оживить a bit our icon appearing */
+}
+
+.button:hover .btn-icon {    /* on hover we'll change the values for both the opacity and left offset of button icon. */
+  opacity: 1;
+  left: 80%;     /* left offset смещение =80% */
+}
+
+
+
+
+
